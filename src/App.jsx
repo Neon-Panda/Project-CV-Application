@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PersonDetails from "./components/personal-details";
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState({
@@ -11,7 +12,14 @@ function App() {
     about:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla eligendi, accusantium maiores aperiam saepe molestias libero quos error et temporibus quo unde tempore. Est recusandae expedita, ex incidunt vero similique eligendi quod! Nobis eligendi est perferendis quas aperiam, repellendus aliquid!",
   });
-  return "Hi";
+  return (
+    <>
+      <PersonDetails
+        personalInfo={personalInfo}
+        setPersonalInfo={setPersonalInfo}
+      />
+    </>
+  );
 }
 
 export default App;
