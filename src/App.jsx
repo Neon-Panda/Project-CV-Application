@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PersonDetails from "./components/personal-details";
+import PersonalSkills from "./components/skills";
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState({
@@ -12,11 +13,22 @@ function App() {
     about:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla eligendi, accusantium maiores aperiam saepe molestias libero quos error et temporibus quo unde tempore. Est recusandae expedita, ex incidunt vero similique eligendi quod! Nobis eligendi est perferendis quas aperiam, repellendus aliquid!",
   });
+
+  const [personalSkills, setPersonalSkills] = useState([
+    { category: "Programming Languages", info: "HTML, CSS, Javascript, ..." },
+    { category: "Databases", info: "SQL MongoDB, ..." },
+    { category: "Frameworks", info: "React, ..." },
+  ]);
+
   return (
     <>
       <PersonDetails
         personalInfo={personalInfo}
         setPersonalInfo={setPersonalInfo}
+      />
+      <PersonalSkills
+        personalSkills={personalSkills}
+        setPersonalSkills={setPersonalSkills}
       />
     </>
   );

@@ -1,11 +1,10 @@
 export default function PersonalInputs({ personalInfo, setPersonalInfo }) {
   function changeInfo(event, personalInfo, setPersonalInfo) {
-    console.log(personalInfo);
     switch (event.target.id) {
-      case "nameFirst":
+      case "name-first":
         setPersonalInfo({ ...personalInfo, nameFirst: event.target.value });
         break;
-      case "nameLast":
+      case "name-last":
         setPersonalInfo({ ...personalInfo, nameLast: event.target.value });
         break;
       case "email":
@@ -30,13 +29,13 @@ export default function PersonalInputs({ personalInfo, setPersonalInfo }) {
   return (
     <section>
       <h2>Personal Information</h2>
-      <form action="" id="personalInfoForm">
-        <label htmlFor="nameFirst">
+      <form action="" id="personal-info-form">
+        <label htmlFor="name-first">
           First Name:
           <input
             type="text"
-            name="nameFirst"
-            id="nameFirst"
+            name="name-first"
+            id="name-first"
             placeholder={personalInfo.nameFirst}
             value={personalInfo.nameFirst}
             onChange={(event) =>
@@ -44,12 +43,12 @@ export default function PersonalInputs({ personalInfo, setPersonalInfo }) {
             }
           />
         </label>
-        <label htmlFor="nameLast">
+        <label htmlFor="name-last">
           Last Name:
           <input
             type="text"
-            name="nameLast"
-            id="nameLast"
+            name="name-last"
+            id="name-last"
             placeholder={personalInfo.nameLast}
             value={personalInfo.nameLast}
             onChange={(event) =>
