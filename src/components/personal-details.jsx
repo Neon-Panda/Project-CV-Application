@@ -1,4 +1,32 @@
-export default function PersonalInputs({ personalInfo, personalInfoSetter }) {
+export default function PersonalInputs({ personalInfo, setPersonalInfo }) {
+  function changeInfo(event, personalInfo, setPersonalInfo) {
+    console.log(personalInfo);
+    switch (event.target.id) {
+      case "nameFirst":
+        setPersonalInfo({ ...personalInfo, nameFirst: event.target.value });
+        break;
+      case "nameLast":
+        setPersonalInfo({ ...personalInfo, nameLast: event.target.value });
+        break;
+      case "email":
+        setPersonalInfo({ ...personalInfo, email: event.target.value });
+        break;
+      case "phone":
+        setPersonalInfo({ ...personalInfo, phone: event.target.value });
+        break;
+      case "address":
+        setPersonalInfo({ ...personalInfo, address: event.target.value });
+        break;
+      case "portfolio":
+        setPersonalInfo({ ...personalInfo, portfolio: event.target.value });
+        break;
+      case "about":
+        setPersonalInfo({ ...personalInfo, about: event.target.value });
+        break;
+      default:
+        break;
+    }
+  }
   return (
     <section>
       <h2>Personal Information</h2>
@@ -11,6 +39,9 @@ export default function PersonalInputs({ personalInfo, personalInfoSetter }) {
             id="nameFirst"
             placeholder={personalInfo.nameFirst}
             value={personalInfo.nameFirst}
+            onChange={(event) =>
+              changeInfo(event, personalInfo, setPersonalInfo)
+            }
           />
         </label>
         <label htmlFor="nameLast">
@@ -21,6 +52,9 @@ export default function PersonalInputs({ personalInfo, personalInfoSetter }) {
             id="nameLast"
             placeholder={personalInfo.nameLast}
             value={personalInfo.nameLast}
+            onChange={(event) =>
+              changeInfo(event, personalInfo, setPersonalInfo)
+            }
           />
         </label>
         <label htmlFor="email">
@@ -31,6 +65,9 @@ export default function PersonalInputs({ personalInfo, personalInfoSetter }) {
             id="email"
             placeholder={personalInfo.email}
             value={personalInfo.email}
+            onChange={(event) =>
+              changeInfo(event, personalInfo, setPersonalInfo)
+            }
           />
         </label>
         <label htmlFor="phone">
@@ -41,6 +78,9 @@ export default function PersonalInputs({ personalInfo, personalInfoSetter }) {
             id="phone"
             placeholder={personalInfo.phone}
             value={personalInfo.phone}
+            onChange={(event) =>
+              changeInfo(event, personalInfo, setPersonalInfo)
+            }
           />
         </label>
         <label htmlFor="address">
@@ -51,6 +91,9 @@ export default function PersonalInputs({ personalInfo, personalInfoSetter }) {
             id="address"
             placeholder={personalInfo.address}
             value={personalInfo.address}
+            onChange={(event) =>
+              changeInfo(event, personalInfo, setPersonalInfo)
+            }
           />
         </label>
         <label htmlFor="portfolio">
@@ -61,6 +104,9 @@ export default function PersonalInputs({ personalInfo, personalInfoSetter }) {
             id="portfolio"
             placeholder={personalInfo.portfolio}
             value={personalInfo.portfolio}
+            onChange={(event) =>
+              changeInfo(event, personalInfo, setPersonalInfo)
+            }
           />
         </label>
         <label htmlFor="about">
@@ -71,6 +117,9 @@ export default function PersonalInputs({ personalInfo, personalInfoSetter }) {
             id="about"
             placeholder={personalInfo.about}
             value={personalInfo.about}
+            onChange={(event) =>
+              changeInfo(event, personalInfo, setPersonalInfo)
+            }
           />
         </label>
       </form>
