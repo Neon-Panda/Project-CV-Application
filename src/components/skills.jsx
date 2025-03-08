@@ -1,19 +1,34 @@
 export default function SkillsInputs({ personalSkills, setPersonalSkills }) {
   function changeSkills(event, personalSkills, setPersonalSkills, index) {
-    if (event.target.name === "category") {
-      setPersonalSkills([
-        ...personalSkills.slice(0, index),
-        { ...personalSkills[index], category: event.target.value },
-        ...personalSkills.slice(index + 1),
-      ]);
-    } else if (event.target.name === "skills") {
-      setPersonalSkills([
-        ...personalSkills.slice(0, index),
-        { ...personalSkills[index], skills: event.target.value },
-        ...personalSkills.slice(index + 1),
-      ]);
+    switch (event.target.name) {
+      case "category":
+        setPersonalSkills([
+          ...personalSkills.slice(0, index),
+          { ...personalSkills[index], category: event.target.value },
+          ...personalSkills.slice(index + 1),
+        ]);
+        break;
+      case "skills":
+        setPersonalSkills([
+          ...personalSkills.slice(0, index),
+          { ...personalSkills[index], skills: event.target.value },
+          ...personalSkills.slice(index + 1),
+        ]);
+        break;
+      default:
+        break;
     }
-    console.log(personalSkills);
+  }
+
+  function deleteElement(personalSkills, setPersonalSkills, index) {
+    setPersonalSkills([
+      ...personalSkills.slice(0, index),
+      ...personalSkills.slice(index + 1),
+    ]);
+  }
+
+  function addElement(personalSkills, setPersonalSkills) {
+    setPersonalSkills([...personalSkills, { category: "", skills: "" }]);
   }
 
   function skillListItem(individualSkill, index) {
@@ -37,6 +52,14 @@ export default function SkillsInputs({ personalSkills, setPersonalSkills }) {
             changeSkills(event, personalSkills, setPersonalSkills, index)
           }
         />
+        <button
+          type="button"
+          onClick={(event) =>
+            deleteElement(personalSkills, setPersonalSkills, index)
+          }
+        >
+          X
+        </button>
       </li>
     );
   }
@@ -53,6 +76,12 @@ export default function SkillsInputs({ personalSkills, setPersonalSkills }) {
               skillListItem(individualSkill, index)
             )}
           </ul>
+          <button
+            type="button"
+            onClick={(event) => addElement(personalSkills, setPersonalSkills)}
+          >
+            Add Category & Skills
+          </button>
         </form>
       </div>
     </section>
