@@ -15,9 +15,9 @@ function App() {
   });
 
   const [personalSkills, setPersonalSkills] = useState([
-    { category: "Programming Languages", info: "HTML, CSS, Javascript, ..." },
-    { category: "Databases", info: "SQL MongoDB, ..." },
-    { category: "Frameworks", info: "React, ..." },
+    { category: "Programming Languages", skills: "HTML, CSS, Javascript, ..." },
+    { category: "Databases", skills: "SQL MongoDB, ..." },
+    { category: "Frameworks", skills: "React, ..." },
   ]);
 
   return (
