@@ -2,33 +2,58 @@ export default function SkillsInputs({ personalSkills, setPersonalSkills }) {
   function changeSkills(event, personalSkills, setPersonalSkills, index) {
     switch (event.target.name) {
       case "category":
-        setPersonalSkills([
-          ...personalSkills.slice(0, index),
-          { ...personalSkills[index], category: event.target.value },
-          ...personalSkills.slice(index + 1),
-        ]);
+        setPersonalSkills(
+          personalSkills.map((item, itemIndex) =>
+            itemIndex === index
+              ? { ...personalSkills[index], category: event.target.value }
+              : item
+          )
+        );
         break;
       case "skills":
-        setPersonalSkills([
-          ...personalSkills.slice(0, index),
-          { ...personalSkills[index], skills: event.target.value },
-          ...personalSkills.slice(index + 1),
-        ]);
-        break;
+        setPersonalSkills(
+          personalSkills.map((item, itemIndex) =>
+            itemIndex === index
+              ? { ...personalSkills[index], skills: event.target.value }
+              : item
+          )
+        );
+      // case "category":
+      //   setPersonalSkills([
+      //     ...personalSkills.slice(0, index),
+      //     { ...personalSkills[index], category: event.target.value },
+      //     ...personalSkills.slice(index + 1),
+      //   ]);
+      //   break;
+      // case "skills":
+      //   setPersonalSkills([
+      //     ...personalSkills.slice(0, index),
+      //     { ...personalSkills[index], skills: event.target.value },
+      //     ...personalSkills.slice(index + 1),
+      //   ]);
+      //   break;
       default:
         break;
     }
   }
 
   function deleteElement(personalSkills, setPersonalSkills, index) {
-    setPersonalSkills([
-      ...personalSkills.slice(0, index),
-      ...personalSkills.slice(index + 1),
-    ]);
+    // setPersonalSkills([
+    //   ...personalSkills.slice(0, index),
+    //   ...personalSkills.slice(index + 1),
+    // ]);
+    setPersonalSkills(
+      personalSkills.filter((item, itemIndex) => itemIndex !== index)
+    );
   }
 
   function addElement(personalSkills, setPersonalSkills) {
-    setPersonalSkills([...personalSkills, { category: "", skills: "" }]);
+    const newObj = {};
+    const keys = Object.keys(personalSkills[0]);
+    keys.forEach((element) => {
+      newObj[element] = "";
+    });
+    setPersonalSkills([...personalSkills, newObj]);
   }
 
   function skillListItem(individualSkill, index) {
