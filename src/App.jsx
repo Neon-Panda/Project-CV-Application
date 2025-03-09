@@ -28,6 +28,7 @@ function App() {
       location: "Berkeley, California",
       dateStart: "2021-03-24",
       dateEnd: "2024-08-13",
+      visible: true,
       description:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur esse ex quis sint voluptatem minima blanditiis quidem laborum exercitationem repellendus.",
     },
