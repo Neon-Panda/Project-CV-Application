@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PersonDetails from "./components/personal-details";
 import PersonalSkills from "./components/skills";
+import EducationHistory from "./components/education-history";
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState({
@@ -20,6 +21,18 @@ function App() {
     { category: "Frameworks", skills: "React, ..." },
   ]);
 
+  const [personalEducation, setPersonalEducation] = useState([
+    {
+      school: "University of California",
+      degree: "Computer Science",
+      location: "Berkeley, California",
+      dateStart: "2021-03-24",
+      dateEnd: "2024-08-13",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur esse ex quis sint voluptatem minima blanditiis quidem laborum exercitationem repellendus.",
+    },
+  ]);
+
   return (
     <>
       <PersonDetails
@@ -29,6 +42,10 @@ function App() {
       <PersonalSkills
         personalSkills={personalSkills}
         setPersonalSkills={setPersonalSkills}
+      />
+      <EducationHistory
+        personalEducation={personalEducation}
+        setPersonalEducation={setPersonalEducation}
       />
     </>
   );
