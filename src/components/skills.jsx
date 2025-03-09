@@ -18,30 +18,12 @@ export default function SkillsInputs({ personalSkills, setPersonalSkills }) {
               : item
           )
         );
-      // case "category":
-      //   setPersonalSkills([
-      //     ...personalSkills.slice(0, index),
-      //     { ...personalSkills[index], category: event.target.value },
-      //     ...personalSkills.slice(index + 1),
-      //   ]);
-      //   break;
-      // case "skills":
-      //   setPersonalSkills([
-      //     ...personalSkills.slice(0, index),
-      //     { ...personalSkills[index], skills: event.target.value },
-      //     ...personalSkills.slice(index + 1),
-      //   ]);
-      //   break;
       default:
         break;
     }
   }
 
   function deleteElement(personalSkills, setPersonalSkills, index) {
-    // setPersonalSkills([
-    //   ...personalSkills.slice(0, index),
-    //   ...personalSkills.slice(index + 1),
-    // ]);
     setPersonalSkills(
       personalSkills.filter((item, itemIndex) => itemIndex !== index)
     );
