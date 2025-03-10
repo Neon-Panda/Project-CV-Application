@@ -62,9 +62,14 @@ export default function Education({ personalEducation, setPersonalEducation }) {
 
   function createForm(individualEducation, index) {
     return (
-      <form action="" key={index}>
-        <label htmlFor={"school-" + index}>
-          School:
+      <form
+        className="personal-education-employment-form"
+        action=""
+        key={index}
+      >
+        <div className="education-employment-area">
+          <label htmlFor={"school-" + index}></label>
+          <span>School:</span>
           <input
             type="text"
             name="school"
@@ -73,9 +78,10 @@ export default function Education({ personalEducation, setPersonalEducation }) {
             value={individualEducation.school}
             onChange={(event) => changeEducation(event, index)}
           />
-        </label>
-        <label htmlFor={"degree" + index}>
-          Degree:
+        </div>
+        <div className="education-employment-area">
+          <label htmlFor={"degree" + index}></label>
+          <span>Degree:</span>
           <input
             type="text"
             name="degree"
@@ -84,9 +90,38 @@ export default function Education({ personalEducation, setPersonalEducation }) {
             value={individualEducation.degree}
             onChange={(event) => changeEducation(event, index)}
           />
-        </label>
-        <label htmlFor={"location" + index}>
-          Location:
+        </div>
+        <div className="education-employment-area">
+          <fieldset className="education-employment-dates">
+            <div className="date">
+              <label htmlFor={"dateStart" + index}></label>
+              <span>Date Start:</span>
+              <input
+                type="date"
+                name="dateStart"
+                id={"dateStart" + index}
+                placeholder="2021-03-24"
+                value={individualEducation.dateStart}
+                onChange={(event) => changeEducation(event, index)}
+              />
+            </div>
+            <div className="date">
+              <label htmlFor={"dateEnd" + index}></label>
+              <span>End Date:</span>
+              <input
+                type="date"
+                name="dateEnd"
+                id={"dateEnd" + index}
+                placeholder="2024-08-13"
+                value={individualEducation.dateEnd}
+                onChange={(event) => changeEducation(event, index)}
+              />
+            </div>
+          </fieldset>
+        </div>
+        <div className="education-employment-area">
+          <label htmlFor={"location" + index}></label>
+          <span>Location:</span>
           <input
             type="text"
             name="location"
@@ -95,33 +130,10 @@ export default function Education({ personalEducation, setPersonalEducation }) {
             value={individualEducation.location}
             onChange={(event) => changeEducation(event, index)}
           />
-        </label>
-        <fieldset>
-          <label htmlFor={"dateStart" + index}>
-            Date Start:
-            <input
-              type="date"
-              name="dateStart"
-              id={"dateStart" + index}
-              placeholder="2021-03-24"
-              value={individualEducation.dateStart}
-              onChange={(event) => changeEducation(event, index)}
-            />
-          </label>
-          <label htmlFor={"dateEnd" + index}>
-            End Date:
-            <input
-              type="date"
-              name="dateEnd"
-              id={"dateEnd" + index}
-              placeholder="2024-08-13"
-              value={individualEducation.dateEnd}
-              onChange={(event) => changeEducation(event, index)}
-            />
-          </label>
-        </fieldset>
-        <label htmlFor={"description" + index}>
-          Description:
+        </div>
+        <div className="education-employment-area">
+          <label htmlFor={"description" + index}></label>
+          <span>Description:</span>
           <textarea
             type="text"
             name="description"
@@ -130,51 +142,64 @@ export default function Education({ personalEducation, setPersonalEducation }) {
             value={individualEducation.description}
             onChange={(event) => changeEducation(event, index)}
           />
-        </label>
-        <button
-          type="button"
-          data-btn="hide"
-          onClick={(event) => changeEducation(event, index)}
-        >
-          Hide
-        </button>
-        <button
-          type="button"
-          data-btn="delete"
-          onClick={(event) => changeEducation(event, index)}
-        >
-          {" "}
-          Delete
-        </button>
+          <div className="education-employment-btns">
+            <button
+              type="button"
+              data-btn="hide"
+              onClick={(event) => changeEducation(event, index)}
+            >
+              Hide
+            </button>
+            <button
+              type="button"
+              data-btn="delete"
+              onClick={(event) => changeEducation(event, index)}
+            >
+              {" "}
+              Delete
+            </button>
+          </div>
+        </div>
       </form>
     );
   }
 
   function collapsedForm(individualEducation, index) {
     return (
-      <h3 key={index}>
-        {individualEducation.school}
+      <h3 className="collapsed-content" key={index}>
+        <p className="collapsed-header">
+          <span>
+            {individualEducation.school} - {individualEducation.degree}
+          </span>
+          <span>
+            {individualEducation.dateStart} - {individualEducation.dateEnd}
+          </span>
+        </p>
+        <p>{individualEducation.location}</p>
+        <p>{individualEducation.description}</p>
 
-        <button
-          type="button"
-          data-btn="hide"
-          onClick={(event) => changeEducation(event, index)}
-        >
-          Show
-        </button>
-        <button
-          type="button"
-          data-btn="delete"
-          onClick={(event) => changeEducation(event, index)}
-        >
-          Delete
-        </button>
+        <div className="education-employment-btns">
+          <button
+            type="button"
+            data-btn="hide"
+            onClick={(event) => changeEducation(event, index)}
+          >
+            Show
+          </button>
+          <button
+            type="button"
+            data-btn="delete"
+            onClick={(event) => changeEducation(event, index)}
+          >
+            Delete
+          </button>
+        </div>
       </h3>
     );
   }
 
   return (
-    <section className="personal-education">
+    <section className="personal-education-employment">
       <h2 className="personal-input-header">Education</h2>
       {personalEducation.map((individualEducation, index) =>
         individualEducation.visible

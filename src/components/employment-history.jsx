@@ -66,17 +66,16 @@ export default function Employment({
   function createForm(individualEmployment, index) {
     return (
       <form action="" key={index}>
-        <label htmlFor={"role-" + index}>
-          Role:
-          <input
-            type="text"
-            name="role"
-            id={"role-" + index}
-            placeholder="University of California"
-            value={individualEmployment.role}
-            onChange={(event) => changeEmployment(event, index)}
-          />
-        </label>
+        <label htmlFor={"role-" + index}></label>
+        Role:
+        <input
+          type="text"
+          name="role"
+          id={"role-" + index}
+          placeholder="University of California"
+          value={individualEmployment.role}
+          onChange={(event) => changeEmployment(event, index)}
+        />
         <label htmlFor={"employer" + index}>
           employer:
           <input
@@ -177,7 +176,7 @@ export default function Employment({
   }
 
   return (
-    <section className="personal-employment">
+    <section className="personal-education-employment">
       <h2 className="personal-input-header">Employment History</h2>
       {personalEmployment.map((individualEmployment, index) =>
         individualEmployment.visible
