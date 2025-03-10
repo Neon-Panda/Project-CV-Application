@@ -65,19 +65,26 @@ export default function Employment({
 
   function createForm(individualEmployment, index) {
     return (
-      <form action="" key={index}>
-        <label htmlFor={"role-" + index}></label>
-        Role:
-        <input
-          type="text"
-          name="role"
-          id={"role-" + index}
-          placeholder="University of California"
-          value={individualEmployment.role}
-          onChange={(event) => changeEmployment(event, index)}
-        />
-        <label htmlFor={"employer" + index}>
-          employer:
+      <form
+        className="personal-education-employment-form"
+        action=""
+        key={index}
+      >
+        <div className="education-employment-area">
+          <label htmlFor={"role-" + index}></label>
+          <span>Role:</span>
+          <input
+            type="text"
+            name="role"
+            id={"role-" + index}
+            placeholder="University of California"
+            value={individualEmployment.role}
+            onChange={(event) => changeEmployment(event, index)}
+          />
+        </div>
+        <div className="education-employment-area">
+          <label htmlFor={"employer" + index}></label>
+          <span>employer:</span>
           <input
             type="text"
             name="employer"
@@ -86,9 +93,10 @@ export default function Employment({
             value={individualEmployment.employer}
             onChange={(event) => changeEmployment(event, index)}
           />
-        </label>
-        <label htmlFor={"locationEmployment" + index}>
-          Location:
+        </div>
+        <div className="education-employment-area">
+          <label htmlFor={"locationEmployment" + index}></label>
+          <span>Location:</span>
           <input
             type="text"
             name="locationEmployment"
@@ -97,33 +105,38 @@ export default function Employment({
             value={individualEmployment.location}
             onChange={(event) => changeEmployment(event, index)}
           />
-        </label>
-        <fieldset>
-          <label htmlFor={"dateStartEmployment" + index}>
-            Date Start:
-            <input
-              type="date"
-              name="dateStartEmployment"
-              id={"dateStartEmployment" + index}
-              placeholder="2021-03-24"
-              value={individualEmployment.dateStart}
-              onChange={(event) => changeEmployment(event, index)}
-            />
-          </label>
-          <label htmlFor={"dateEndEmployment" + index}>
-            Date End:
-            <input
-              type="date"
-              name="dateEndEmployment"
-              id={"dateEndEmployment" + index}
-              placeholder="2024-08-13"
-              value={individualEmployment.dateEnd}
-              onChange={(event) => changeEmployment(event, index)}
-            />
-          </label>
-        </fieldset>
-        <label htmlFor={"descriptionEmployment" + index}>
-          Description:
+        </div>
+        <div className="education-employment-area">
+          <fieldset className="education-employment-dates">
+            <div className="date">
+              <label htmlFor={"dateStartEmployment" + index}></label>
+              <span>Date Start:</span>
+              <input
+                type="date"
+                name="dateStartEmployment"
+                id={"dateStartEmployment" + index}
+                placeholder="2021-03-24"
+                value={individualEmployment.dateStart}
+                onChange={(event) => changeEmployment(event, index)}
+              />
+            </div>
+            <div className="date">
+              <label htmlFor={"dateEndEmployment" + index}></label>
+              <span>Date End:</span>
+              <input
+                type="date"
+                name="dateEndEmployment"
+                id={"dateEndEmployment" + index}
+                placeholder="2024-08-13"
+                value={individualEmployment.dateEnd}
+                onChange={(event) => changeEmployment(event, index)}
+              />
+            </div>
+          </fieldset>
+        </div>
+        <div className="education-employment-area">
+          <label htmlFor={"descriptionEmployment" + index}></label>
+          <span>Description:</span>
           <textarea
             type="text"
             name="descriptionEmployment"
@@ -132,45 +145,57 @@ export default function Employment({
             value={individualEmployment.description}
             onChange={(event) => changeEmployment(event, index)}
           />
-        </label>
-        <button
-          type="button"
-          data-btn="hide"
-          onClick={(event) => changeEmployment(event, index)}
-        >
-          Hide
-        </button>
-        <button
-          type="button"
-          data-btn="delete"
-          onClick={(event) => changeEmployment(event, index)}
-        >
-          {" "}
-          Delete
-        </button>
+          <div className="education-employment-btns">
+            <button
+              type="button"
+              data-btn="hide"
+              onClick={(event) => changeEmployment(event, index)}
+            >
+              Hide
+            </button>
+            <button
+              type="button"
+              data-btn="delete"
+              onClick={(event) => changeEmployment(event, index)}
+            >
+              {" "}
+              Delete
+            </button>
+          </div>
+        </div>
       </form>
     );
   }
 
   function collapsedForm(individualEmployment, index) {
     return (
-      <h3 key={index}>
-        {individualEmployment.role}
-
-        <button
-          type="button"
-          data-btn="hide"
-          onClick={(event) => changeEmployment(event, index)}
-        >
-          Show
-        </button>
-        <button
-          type="button"
-          data-btn="delete"
-          onClick={(event) => changeEmployment(event, index)}
-        >
-          Delete
-        </button>
+      <h3 className="collapsed-content" key={index}>
+        <p className="collapsed-header">
+          <span>
+            {individualEmployment.role} - {individualEmployment.employer}
+          </span>
+          <span>
+            {individualEmployment.dateStart} - {individualEmployment.dateEnd}
+          </span>
+        </p>
+        <p>{individualEmployment.location}</p>
+        <p>{individualEmployment.description}</p>
+        <div className="education-employment-btns">
+          <button
+            type="button"
+            data-btn="hide"
+            onClick={(event) => changeEmployment(event, index)}
+          >
+            Edit
+          </button>
+          <button
+            type="button"
+            data-btn="delete"
+            onClick={(event) => changeEmployment(event, index)}
+          >
+            Delete
+          </button>
+        </div>
       </h3>
     );
   }

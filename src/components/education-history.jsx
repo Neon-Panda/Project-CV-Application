@@ -92,6 +92,18 @@ export default function Education({ personalEducation, setPersonalEducation }) {
           />
         </div>
         <div className="education-employment-area">
+          <label htmlFor={"location" + index}></label>
+          <span>Location:</span>
+          <input
+            type="text"
+            name="location"
+            id={"location" + index}
+            placeholder="Berkeley, California"
+            value={individualEducation.location}
+            onChange={(event) => changeEducation(event, index)}
+          />
+        </div>
+        <div className="education-employment-area">
           <fieldset className="education-employment-dates">
             <div className="date">
               <label htmlFor={"dateStart" + index}></label>
@@ -118,18 +130,6 @@ export default function Education({ personalEducation, setPersonalEducation }) {
               />
             </div>
           </fieldset>
-        </div>
-        <div className="education-employment-area">
-          <label htmlFor={"location" + index}></label>
-          <span>Location:</span>
-          <input
-            type="text"
-            name="location"
-            id={"location" + index}
-            placeholder="Berkeley, California"
-            value={individualEducation.location}
-            onChange={(event) => changeEducation(event, index)}
-          />
         </div>
         <div className="education-employment-area">
           <label htmlFor={"description" + index}></label>
@@ -184,7 +184,7 @@ export default function Education({ personalEducation, setPersonalEducation }) {
             data-btn="hide"
             onClick={(event) => changeEducation(event, index)}
           >
-            Show
+            Edit
           </button>
           <button
             type="button"

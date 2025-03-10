@@ -218,6 +218,7 @@ textarea {
   padding: 0;
   border: none;
   display: flex;
+  gap: 1rem;
 }
 
 .collapsed-content {
