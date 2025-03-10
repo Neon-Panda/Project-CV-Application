@@ -50,7 +50,7 @@ function App() {
   ]);
 
   return (
-    <>
+    <div className="all-content">
       <main className="input-section">
         <PersonDetails
           personalInfo={personalInfo}
@@ -77,7 +77,7 @@ function App() {
           personalEmployment={personalEmployment}
         />
       </section>
-    </>
+    </div>
   );
 }
 

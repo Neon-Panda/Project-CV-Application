@@ -31,7 +31,7 @@ export default function PersonalInputs({ personalInfo, setPersonalInfo }) {
       <h2 className="personal-input-header">Personal Information</h2>
       <form action="" id="personal-info-form">
         <label htmlFor="name-first">
-          First Name:
+          <span>First Name:</span>
           <input
             type="text"
             name="name-first"
@@ -110,7 +110,7 @@ export default function PersonalInputs({ personalInfo, setPersonalInfo }) {
         </label>
         <label htmlFor="about">
           Personal Description:
-          <input
+          <textarea
             type="text"
             name="about"
             id="about"
