@@ -2,6 +2,8 @@ import { useState } from "react";
 import PersonDetails from "./components/personal-details";
 import PersonalSkills from "./components/skills";
 import EducationHistory from "./components/education-history";
+import EmploymentHistory from "./components/employment-history";
+import Resume from "./components/resume";
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState({
@@ -34,20 +36,47 @@ function App() {
     },
   ]);
 
+  const [personalEmployment, setPernalEmployment] = useState([
+    {
+      role: "Web Developer",
+      employer: "Meta",
+      location: "Berkeley, California",
+      dateStart: "2021-03-24",
+      dateEnd: "2024-08-13",
+      visible: true,
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt, accusamus quo distinctio cupiditate molestias sed ex. Ratione quos molestiae voluptates?",
+    },
+  ]);
+
   return (
     <>
-      <PersonDetails
-        personalInfo={personalInfo}
-        setPersonalInfo={setPersonalInfo}
-      />
-      <PersonalSkills
-        personalSkills={personalSkills}
-        setPersonalSkills={setPersonalSkills}
-      />
-      <EducationHistory
-        personalEducation={personalEducation}
-        setPersonalEducation={setPersonalEducation}
-      />
+      <main>
+        <PersonDetails
+          personalInfo={personalInfo}
+          setPersonalInfo={setPersonalInfo}
+        />
+        <PersonalSkills
+          personalSkills={personalSkills}
+          setPersonalSkills={setPersonalSkills}
+        />
+        <EducationHistory
+          personalEducation={personalEducation}
+          setPersonalEducation={setPersonalEducation}
+        />
+        <EmploymentHistory
+          personalEmployment={personalEmployment}
+          setPersonalEmployment={setPernalEmployment}
+        />
+      </main>
+      <section>
+        <Resume
+          personalInfo={personalInfo}
+          personalSkills={personalSkills}
+          personalEducation={personalEducation}
+          personalEmployment={personalEmployment}
+        />
+      </section>
     </>
   );
 }

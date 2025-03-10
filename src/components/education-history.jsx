@@ -1,4 +1,4 @@
-export default function education({ personalEducation, setPersonalEducation }) {
+export default function Education({ personalEducation, setPersonalEducation }) {
   function changeEducation(event, index) {
     const editField = (eventCase, eventValue, index) => {
       setPersonalEducation(
@@ -97,8 +97,8 @@ export default function education({ personalEducation, setPersonalEducation }) {
           />
         </label>
         <fieldset>
-          <legend>Start Date:</legend>
           <label htmlFor={"dateStart" + index}>
+            Date Start:
             <input
               type="date"
               name="dateStart"
