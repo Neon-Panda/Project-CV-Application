@@ -139,7 +139,7 @@ export default function Employment({
           data-btn="hide"
           onClick={(event) => changeEmployment(event, index)}
         >
-          HIDE
+          Hide
         </button>
         <button
           type="button"
@@ -147,7 +147,7 @@ export default function Employment({
           onClick={(event) => changeEmployment(event, index)}
         >
           {" "}
-          DELETE
+          Delete
         </button>
       </form>
     );
@@ -163,14 +163,14 @@ export default function Employment({
           data-btn="hide"
           onClick={(event) => changeEmployment(event, index)}
         >
-          HIDE
+          Show
         </button>
         <button
           type="button"
           data-btn="delete"
           onClick={(event) => changeEmployment(event, index)}
         >
-          DELETE
+          Delete
         </button>
       </h3>
     );

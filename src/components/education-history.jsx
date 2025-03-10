@@ -136,7 +136,7 @@ export default function Education({ personalEducation, setPersonalEducation }) {
           data-btn="hide"
           onClick={(event) => changeEducation(event, index)}
         >
-          HIDE
+          Hide
         </button>
         <button
           type="button"
@@ -144,7 +144,7 @@ export default function Education({ personalEducation, setPersonalEducation }) {
           onClick={(event) => changeEducation(event, index)}
         >
           {" "}
-          DELETE
+          Delete
         </button>
       </form>
     );
@@ -160,14 +160,14 @@ export default function Education({ personalEducation, setPersonalEducation }) {
           data-btn="hide"
           onClick={(event) => changeEducation(event, index)}
         >
-          HIDE
+          Show
         </button>
         <button
           type="button"
           data-btn="delete"
           onClick={(event) => changeEducation(event, index)}
         >
-          DELETE
+          Delete
         </button>
       </h3>
     );

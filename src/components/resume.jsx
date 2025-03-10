@@ -33,6 +33,15 @@ export default function Resume({
       </li>
     );
   }
+
+  function listSkill(individualSkill, index) {
+    return (
+      <li key={index}>
+        {individualSkill.category}
+        <span>{individualSkill.skills}</span>
+      </li>
+    );
+  }
   return (
     <>
       <aside>
@@ -65,6 +74,14 @@ export default function Resume({
             <ul>
               {personalEducation.map((individualEducation, index) =>
                 listEducation(individualEducation, index)
+              )}
+            </ul>
+          </section>
+          <section>
+            <h2>Skills</h2>
+            <ul>
+              {personalSkills.map((individualSkill, index) =>
+                listSkill(individualSkill, index)
               )}
             </ul>
           </section>
