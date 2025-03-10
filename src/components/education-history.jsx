@@ -14,6 +14,13 @@ export default function education({ personalEducation, setPersonalEducation }) {
       return !personalEducation[index].visible;
     };
 
+    const deleteField = (index) => {
+      console.log("test");
+      setPersonalEducation(
+        personalEducation.filter((item, itemIndex) => itemIndex !== index)
+      );
+    };
+
     switch (event.target.name || event.target.dataset.btn) {
       case "school":
         editField("school", event.target.value, index);
@@ -35,6 +42,10 @@ export default function education({ personalEducation, setPersonalEducation }) {
         break;
       case "hide":
         editField("visible", hiddenToggle(), index);
+        break;
+      case "delete":
+        deleteField(index);
+        break;
       default:
         break;
     }
@@ -127,6 +138,14 @@ export default function education({ personalEducation, setPersonalEducation }) {
         >
           HIDE
         </button>
+        <button
+          type="button"
+          data-btn="delete"
+          onClick={(event) => changeEducation(event, index)}
+        >
+          {" "}
+          DELETE
+        </button>
       </form>
     );
   }
@@ -142,6 +161,13 @@ export default function education({ personalEducation, setPersonalEducation }) {
           onClick={(event) => changeEducation(event, index)}
         >
           HIDE
+        </button>
+        <button
+          type="button"
+          data-btn="delete"
+          onClick={(event) => changeEducation(event, index)}
+        >
+          DELETE
         </button>
       </h3>
     );
