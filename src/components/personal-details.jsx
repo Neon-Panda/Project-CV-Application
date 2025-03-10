@@ -109,7 +109,7 @@ export default function PersonalInputs({ personalInfo, setPersonalInfo }) {
           />
         </label>
         <label htmlFor="about">
-          Personal Description:
+          <span className="info-description">Personal Description:</span>
           <textarea
             type="text"
             name="about"
