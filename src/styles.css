@@ -68,8 +68,10 @@ h6 {
   isolation: isolate;
 }
 
-ul {
+ul,
+li {
   padding: 0;
+  list-style: none;
 }
 
 :root {
@@ -98,7 +100,7 @@ body {
 
 .all-content {
   display: grid;
-  grid-template-columns: 2fr 1.5fr;
+  grid-template-columns: 1fr 1fr;
   font-family: Josefin Sans;
 }
 
@@ -233,4 +235,110 @@ textarea {
   justify-content: space-between;
   font-size: 1.1rem;
   font-weight: 500;
+}
+
+.resume-section {
+  background-color: gray;
+}
+
+.resume-content {
+  margin: 30px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  height: 95vh;
+  position: fixed;
+}
+
+.aside-info {
+  padding: 1rem;
+  background-color: var(--accent-color-dark);
+  padding-top: 15vh;
+  color: white;
+}
+
+.aside-header {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.aside-content {
+  font-size: 0.7rem;
+}
+
+.aside-item {
+  padding-top: 1rem;
+  font-weight: 400;
+}
+
+.aside-item span {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.resume-main-content {
+  padding: 1rem;
+  padding-top: 5vh;
+}
+
+.resume-head {
+  padding-bottom: 2rem;
+}
+
+.resume-name {
+  font-size: 2rem;
+}
+
+.resume-about {
+  font-size: 0.8rem;
+}
+
+.resume-header {
+  font-size: 1.3rem;
+}
+
+.education-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.education-location {
+  font-size: 0.8rem;
+}
+
+.education-description {
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.resume-skills {
+  padding: 1rem 0;
+}
+
+.skill-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.skill-item span:first-child {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.employment-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.employment-location {
+  font-size: 0.8rem;
+}
+
+.employment-description {
+  padding: 1rem 0;
+  font-size: 0.9rem;
 }

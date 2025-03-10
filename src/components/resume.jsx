@@ -7,14 +7,16 @@ export default function Resume({
   function listEducation(individualEducation, index) {
     return (
       <li key={index}>
-        <div>
+        <div className="education-item">
           <h3>{individualEducation.school}</h3>
           <p>
             {individualEducation.dateStart} - {individualEducation.dateEnd}
           </p>
         </div>
-        <p>{individualEducation.location}</p>
-        <p>{individualEducation.description}</p>
+        <p className="education-location">{individualEducation.location}</p>
+        <p className="education-description">
+          {individualEducation.description}
+        </p>
       </li>
     );
   }
@@ -22,22 +24,24 @@ export default function Resume({
   function listEmployment(individualEmployment, index) {
     return (
       <li key={index}>
-        <div>
+        <div className="employment-item">
           <h3>{individualEmployment.role}</h3>
           <p>
             {individualEmployment.dateStart} - {individualEmployment.dateEnd}
           </p>
         </div>
-        <p>{individualEmployment.location}</p>
-        <p>{individualEmployment.description}</p>
+        <p className="employment-location">{individualEmployment.location}</p>
+        <p className="employment-description">
+          {individualEmployment.description}
+        </p>
       </li>
     );
   }
 
   function listSkill(individualSkill, index) {
     return (
-      <li key={index}>
-        {individualSkill.category}
+      <li className="skill-item" key={index}>
+        <span>{individualSkill.category}:</span>{" "}
         <span>{individualSkill.skills}</span>
       </li>
     );
@@ -46,17 +50,17 @@ export default function Resume({
     <>
       <aside className="aside-info">
         <h3 className="aside-header">Contact</h3>
-        <ul>
-          <li>
+        <ul className="aside-content">
+          <li className="aside-item">
             <span>Address</span> <br /> {personalInfo.address}
           </li>
-          <li>
+          <li className="aside-item">
             <span>Phone</span> <br /> {personalInfo.phone}
           </li>
-          <li>
+          <li className="aside-item">
             <span>Email</span> <br /> {personalInfo.email}
           </li>
-          <li>
+          <li className="aside-item">
             <span>Portfolio</span> <br /> {personalInfo.portfolio}
           </li>
         </ul>
@@ -79,7 +83,7 @@ export default function Resume({
           </section>
           <section>
             <h2 className="resume-header">Skills</h2>
-            <ul>
+            <ul className="resume-skills">
               {personalSkills.map((individualSkill, index) =>
                 listSkill(individualSkill, index)
               )}

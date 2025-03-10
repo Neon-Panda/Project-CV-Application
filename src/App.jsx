@@ -70,12 +70,14 @@ function App() {
         />
       </main>
       <section className="resume-section">
-        <Resume
-          personalInfo={personalInfo}
-          personalSkills={personalSkills}
-          personalEducation={personalEducation}
-          personalEmployment={personalEmployment}
-        />
+        <div className="resume-content">
+          <Resume
+            personalInfo={personalInfo}
+            personalSkills={personalSkills}
+            personalEducation={personalEducation}
+            personalEmployment={personalEmployment}
+          />
+        </div>
       </section>
     </div>
   );
