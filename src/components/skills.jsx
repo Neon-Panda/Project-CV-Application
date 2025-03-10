@@ -40,7 +40,7 @@ export default function SkillsInputs({ personalSkills, setPersonalSkills }) {
 
   function skillListItem(individualSkill, index) {
     return (
-      <li key={index}>
+      <li key={index} className="personal-skill-item">
         <input
           type="text"
           name="category"
@@ -74,23 +74,23 @@ export default function SkillsInputs({ personalSkills, setPersonalSkills }) {
   return (
     <section className="personal-skills">
       <h2 className="personal-input-header">Skills</h2>
-      <div className="skills-headers">
-        <div>Categories</div>
-        <div>Skills</div>
-        <form action="" id="personalSkills">
-          <ul>
-            {personalSkills.map((individualSkill, index) =>
-              skillListItem(individualSkill, index)
-            )}
-          </ul>
-          <button
-            type="button"
-            onClick={(event) => addElement(personalSkills, setPersonalSkills)}
-          >
-            Add Category & Skills
-          </button>
-        </form>
-      </div>
+      <form className="personal-skills-form" action="" id="personalSkills">
+        <ul className="personal-skill-list">
+          <div className="personal-skills-header">
+            <p>Categories</p>
+            <p>Skills</p>
+          </div>
+          {personalSkills.map((individualSkill, index) =>
+            skillListItem(individualSkill, index)
+          )}
+        </ul>
+        <button
+          type="button"
+          onClick={(event) => addElement(personalSkills, setPersonalSkills)}
+        >
+          Add Category & Skills
+        </button>
+      </form>
     </section>
   );
 }

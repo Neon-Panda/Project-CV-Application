@@ -30,7 +30,8 @@ export default function PersonalInputs({ personalInfo, setPersonalInfo }) {
     <section className="personal-info">
       <h2 className="personal-input-header">Personal Information</h2>
       <form action="" id="personal-info-form">
-        <label htmlFor="name-first">
+        <div className="personal-input-area">
+          <label htmlFor="name-first"></label>
           <span>First Name:</span>
           <input
             type="text"
@@ -42,9 +43,10 @@ export default function PersonalInputs({ personalInfo, setPersonalInfo }) {
               changeInfo(event, personalInfo, setPersonalInfo)
             }
           />
-        </label>
-        <label htmlFor="name-last">
-          Last Name:
+        </div>
+        <div className="personal-input-area">
+          <label htmlFor="name-last"></label>
+          <span>Last Name:</span>
           <input
             type="text"
             name="name-last"
@@ -55,9 +57,10 @@ export default function PersonalInputs({ personalInfo, setPersonalInfo }) {
               changeInfo(event, personalInfo, setPersonalInfo)
             }
           />
-        </label>
-        <label htmlFor="email">
-          Email:
+        </div>
+        <div className="personal-input-area">
+          <label htmlFor="email"></label>
+          <span>Email:</span>
           <input
             type="email"
             name="email"
@@ -68,9 +71,10 @@ export default function PersonalInputs({ personalInfo, setPersonalInfo }) {
               changeInfo(event, personalInfo, setPersonalInfo)
             }
           />
-        </label>
-        <label htmlFor="phone">
-          Phone Number:
+        </div>
+        <div className="personal-input-area">
+          <label htmlFor="phone"></label>
+          <span>Phone Number:</span>
           <input
             type="tel"
             name="phone"
@@ -81,9 +85,10 @@ export default function PersonalInputs({ personalInfo, setPersonalInfo }) {
               changeInfo(event, personalInfo, setPersonalInfo)
             }
           />
-        </label>
-        <label htmlFor="address">
-          Address:
+        </div>
+        <div className="personal-input-area">
+          <label htmlFor="address"></label>
+          <span>Address:</span>
           <input
             type="text"
             name="address"
@@ -94,9 +99,10 @@ export default function PersonalInputs({ personalInfo, setPersonalInfo }) {
               changeInfo(event, personalInfo, setPersonalInfo)
             }
           />
-        </label>
-        <label htmlFor="portfolio">
-          Portfolio Link:
+        </div>
+        <div className="personal-input-area">
+          <label htmlFor="portfolio"></label>
+          <span>Portfolio Link:</span>
           <input
             type="url"
             name="portfolio"
@@ -107,8 +113,9 @@ export default function PersonalInputs({ personalInfo, setPersonalInfo }) {
               changeInfo(event, personalInfo, setPersonalInfo)
             }
           />
-        </label>
-        <label htmlFor="about">
+        </div>
+        <div className="personal-input-area">
+          <label htmlFor="about"></label>
           <span className="info-description">Personal Description:</span>
           <textarea
             type="text"
@@ -120,7 +127,7 @@ export default function PersonalInputs({ personalInfo, setPersonalInfo }) {
               changeInfo(event, personalInfo, setPersonalInfo)
             }
           />
-        </label>
+        </div>
       </form>
     </section>
   );
