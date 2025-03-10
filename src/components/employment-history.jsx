@@ -177,8 +177,8 @@ export default function Employment({
   }
 
   return (
-    <section>
-      <h2>Employment History</h2>
+    <section className="personal-employment">
+      <h2 className="personal-input-header">Employment History</h2>
       {personalEmployment.map((individualEmployment, index) =>
         individualEmployment.visible
           ? createForm(individualEmployment, index)

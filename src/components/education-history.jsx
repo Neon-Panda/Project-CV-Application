@@ -174,8 +174,8 @@ export default function Education({ personalEducation, setPersonalEducation }) {
   }
 
   return (
-    <section>
-      <h2>Education</h2>
+    <section className="personal-education">
+      <h2 className="personal-input-header">Education</h2>
       {personalEducation.map((individualEducation, index) =>
         individualEducation.visible
           ? createForm(individualEducation, index)

@@ -44,8 +44,8 @@ export default function Resume({
   }
   return (
     <>
-      <aside>
-        <h3>Contact</h3>
+      <aside className="aside-info">
+        <h3 className="aside-header">Contact</h3>
         <ul>
           <li>
             <span>Address</span> <br /> {personalInfo.address}
@@ -61,16 +61,16 @@ export default function Resume({
           </li>
         </ul>
       </aside>
-      <article>
+      <article className="resume-main-content">
         <section className="resume-head">
-          <h1>
+          <h1 className="resume-name">
             {personalInfo.nameFirst} {personalInfo.nameLast}
           </h1>
-          <p>{personalInfo.about}</p>
+          <p className="resume-about">{personalInfo.about}</p>
         </section>
         <div className="resume-body">
           <section className="resume-education">
-            <h2>Education</h2>
+            <h2 className="resume-header">Education</h2>
             <ul>
               {personalEducation.map((individualEducation, index) =>
                 listEducation(individualEducation, index)
@@ -78,7 +78,7 @@ export default function Resume({
             </ul>
           </section>
           <section>
-            <h2>Skills</h2>
+            <h2 className="resume-header">Skills</h2>
             <ul>
               {personalSkills.map((individualSkill, index) =>
                 listSkill(individualSkill, index)
@@ -86,7 +86,7 @@ export default function Resume({
             </ul>
           </section>
           <section>
-            <h2>Employment</h2>
+            <h2 className="resume-header">Employment</h2>
             <ul>
               {personalEmployment.map((individualEmployment, index) =>
                 listEmployment(individualEmployment, index)

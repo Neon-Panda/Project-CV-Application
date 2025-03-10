@@ -27,8 +27,8 @@ export default function PersonalInputs({ personalInfo, setPersonalInfo }) {
     }
   }
   return (
-    <section>
-      <h2>Personal Information</h2>
+    <section className="personal-info">
+      <h2 className="personal-input-header">Personal Information</h2>
       <form action="" id="personal-info-form">
         <label htmlFor="name-first">
           First Name:

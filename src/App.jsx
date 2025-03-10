@@ -51,7 +51,7 @@ function App() {
 
   return (
     <>
-      <main>
+      <main className="input-section">
         <PersonDetails
           personalInfo={personalInfo}
           setPersonalInfo={setPersonalInfo}
@@ -69,7 +69,7 @@ function App() {
           setPersonalEmployment={setPernalEmployment}
         />
       </main>
-      <section>
+      <section className="resume-section">
         <Resume
           personalInfo={personalInfo}
           personalSkills={personalSkills}

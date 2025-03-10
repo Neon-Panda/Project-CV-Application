@@ -72,9 +72,9 @@ export default function SkillsInputs({ personalSkills, setPersonalSkills }) {
   }
 
   return (
-    <section>
-      <h2>Skills</h2>
-      <div>
+    <section className="personal-skills">
+      <h2 className="personal-input-header">Skills</h2>
+      <div className="skills-headers">
         <div>Categories</div>
         <div>Skills</div>
         <form action="" id="personalSkills">
